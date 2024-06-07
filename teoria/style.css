@@ -3,3 +3,25 @@
   margin: 0;
   padding: 0;
 }
+
+.boton-abrir-modal {
+  border: 1px solid transparent;
+  padding: 1rem;
+  background: rgb(230, 230, 173);
+}
+
+.contenedor-modal {
+  visibility: hidden;
+  position: fixed;
+  inset: 0px;
+  background: lightgrey;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 75%;
+}
+
+.contenido-modal {
+  background: white;
+  padding: 2rem;
+}

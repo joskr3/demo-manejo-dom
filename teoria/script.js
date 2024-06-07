@@ -92,36 +92,113 @@ nuevoBoton.textContent = 'Hazme click!'
 document.body.appendChild( nuevoBoton )
 
 
-// nuevoBoton.addEventListener( 'click', function () {
-//   imagen.src = "https://cdn.pixabay.com/photo/2013/07/12/15/30/penguin-149971_1280.png"
-// } )
+nuevoBoton.addEventListener( 'click', function () {
+  imagen.src = "https://cdn.pixabay.com/photo/2013/07/12/15/30/penguin-149971_1280.png"
+} )
 
-// nuevoBoton.addEventListener( 'dblclick', function () {
-//   imagen.src = "https://cdn.pixabay.com/photo/2015/03/21/06/37/monitor-683248_1280.jpg"
-// } )
-
-
-// nuevoBoton.addEventListener( 'click', function () {
-//   imagen.src = "https://cdn.pixabay.com/photo/2013/07/12/15/30/penguin-149971_1280.png"
-// } )
+nuevoBoton.addEventListener( 'dblclick', function () {
+  imagen.src = "https://cdn.pixabay.com/photo/2015/03/21/06/37/monitor-683248_1280.jpg"
+} )
 
 
 
-// function toggle() {
-//   let style = ''
-//   let valor = false
-
-//   valor && 'display:block ; width:150px; height:150px'
-//   !valor && 'display:none'
-
-//   valor = !valor
-
-//   return style
-// }
+window.onload = () => {
+  console.log( "Tu te ejecutas primero que todos!!!" )
+}
 
 
-// nuevoBoton.addEventListener( 'click', function () {
-//   imagen.style = `${toggle()}`
-// } )
+imagen.onclick = () => {
+  console.log( "Click en la imagen" )
+}
+
+
+let nuevoInput = document.createElement( 'input' )
+
+nuevoInput.placeholder = 'Hola soy nuevo input'
+
+document.body.appendChild( nuevoInput )
+
+
+nuevoInput.onkeydown = () => {
+  console.log( "Hola mundo" )
+}
+
+nuevoInput.onfocus = () => {
+  console.log( "Estoy enfocado" )
+}
+
+
+nuevoInput.addEventListener( 'click', () => {
+  console.log( "Le hice click al input" )
+} )
+
+
+
+
+let ul = document.createElement( 'ul' )
+
+let items = [ 'elemento1', 'elemento2', 'elemento3' ]
+
+items.map( item => {
+  let li = document.createElement( 'li' )
+  li.innerText = item;
+  ul.appendChild( li )
+} )
+
+//recorre sobre el array original 
+// esta mofidificando "mi fuente de la verdad"
+// esto es malo , porque puede causar errores o bugs , al modificar "algo en caliente"
+items.forEach( item => {
+  let li = document.createElement( 'li' )
+  li.innerText = item;
+  ul.appendChild( li )
+} )
+
+
+document.body.appendChild( ul )
+
+
+// modal version taildwindcss
+const miBotonModal = document.getElementById( "abrirModal" )
+const miModal = document.getElementById( "miModal" )
+const cerrarModal = document.getElementById( "cerrarModal" )
+
+miBotonModal.onclick = () => {
+  miModal.classList.remove( 'hidden' )
+}
+
+cerrarModal.onclick = () => {
+  miModal.classList.add( 'hidden' )
+}
+
+
+
+// modal version css
+const miBotonModal2 = document.getElementById( "abrirModal2" )
+const miModal2 = document.getElementById( "miModal2" )
+const cerrarModal2 = document.getElementById( "cerrarModal2" )
+
+miBotonModal2.onclick = () => {
+  miModal2.style.visibility = "visible"
+}
+
+cerrarModal2.onclick = () => {
+  miModal2.style.visibility = "hidden"
+}
+
+
+
+// modal version 2css
+const miBotonModal3 = document.getElementById( "abrirModal3" )
+const miModal3 = document.getElementById( "miModal3" )
+const cerrarModal3 = document.getElementById( "cerrarModal3" )
+
+miBotonModal3.onclick = () => {
+  miModal3.style.visibility = "visible"
+}
+
+cerrarModal3.onclick = () => {
+  miModal3.style.visibility = "hidden"
+}
 
 
