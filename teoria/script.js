@@ -148,11 +148,11 @@ items.map( item => {
 //recorre sobre el array original 
 // esta mofidificando "mi fuente de la verdad"
 // esto es malo , porque puede causar errores o bugs , al modificar "algo en caliente"
-items.forEach( item => {
-  let li = document.createElement( 'li' )
-  li.innerText = item;
-  ul.appendChild( li )
-} )
+// items.forEach( item => {
+//   let li = document.createElement( 'li' )
+//   li.innerText = item;
+//   ul.appendChild( li )
+// } )
 
 
 document.body.appendChild( ul )
@@ -202,3 +202,111 @@ cerrarModal3.onclick = () => {
 }
 
 
+
+
+// const miFormulario = document.getElementById( "miFormulario" )
+
+// miFormulario.onsubmit = ( event ) => {
+//   event.preventDefault();
+//   let formData = new FormData( event.target )
+//   console.log( 'Form data', Object.fromEntries( formData.entries() ) )
+// }
+
+
+{/* <form id="miFormulario">
+  <label id="label" for="campo1"> Mi campo 1</label>
+  <input name="campo1" id="campo1">
+    <input type="submit">
+    </form> */}
+
+
+const miFormulario = document.createElement( 'form' )// aca creo la etiqueta <form>
+miFormulario.id = 'miFormulario'
+miFormulario.style = 'display:flex; flex-direction:column; gap:10px'
+
+
+const contenedor1 = document.createElement( 'div' )
+contenedor1.id = 'contenedor1'
+contenedor1.style = 'display:flex; gap:10px;max-width:70%;margin:auto'
+
+const inputNombres = document.createElement( 'input' )
+inputNombres.style = 'border:1px solid black'
+inputNombres.setAttribute( 'name', 'campo1-name' )
+inputNombres.setAttribute( 'id', 'campo1-id' )
+
+const labelNombres = document.createElement( 'label' )
+labelNombres.id = 'miLabel1'
+labelNombres.setAttribute( 'for', 'campo1' )
+labelNombres.innerText = 'Nombres'
+
+contenedor1.appendChild( labelNombres )
+contenedor1.appendChild( inputNombres )
+
+
+const contenedor2 = document.createElement( 'div' )
+contenedor2.id = 'contenedor2'
+contenedor2.style = 'display:flex;gap:10px; max-width:70%;margin:auto'
+
+const inputApellidos = document.createElement( 'input' )
+inputApellidos.style = 'border:1px solid black'
+inputApellidos.setAttribute( 'name', 'campo2-name' )
+inputApellidos.setAttribute( 'id', 'campo2-id' )
+
+const labelApellidos = document.createElement( 'label' )
+labelApellidos.id = 'miLabel2'
+labelApellidos.setAttribute( 'for', 'campo2' )
+labelApellidos.innerText = 'Apellidos'
+
+contenedor2.appendChild( labelApellidos )
+contenedor2.appendChild( inputApellidos )
+
+
+const submitInput = document.createElement( 'input' )
+submitInput.setAttribute( 'type', 'submit' )
+submitInput.style = 'border: 1px solid black ; max-width: 50%; margin:auto'
+submitInput.textContent = 'Iniciar sesion'
+
+miFormulario.appendChild( contenedor1 )
+miFormulario.appendChild( contenedor2 )
+miFormulario.appendChild( submitInput )
+
+document.body.appendChild( miFormulario )
+
+
+
+miFormulario.onsubmit = ( evento ) => {
+  evento.preventDefault();
+  const dataDelFormulario = new FormData( evento.target )// el event.target -> es el formulario ,el form
+  const enviarLosCampos = Object.fromEntries( dataDelFormulario.entries() )
+  console.log(enviarLosCampos)
+}
+
+
+
+// miFormulario.onsubmit = ( event ) => {
+//   event.preventDefault();
+//   let armarDataParaEnviar = new FormData( event.target )
+//   console.log(armarDataParaEnviar)
+//   let info = Object.fromEntries( armarDataParaEnviar.entries() )
+//   console.log( info )
+// }
+
+
+// miFormulario.onsubmit( function (evento) { 
+
+// } )
+
+// miFormulario.addEventListener( 'submit', function () { 
+
+// } )
+
+// function enviarInfo( evento ) {
+//   event.preventDefault();
+//   let armarDataParaEnviar = new FormData( event.target )
+//   let info = Object.fromEntries( armarDataParaEnviar.entries() )
+//   console.log( info )
+
+// }
+
+
+// miFormulario.addEventListener( 'submit', enviarInfo )
