@@ -59,6 +59,7 @@ nuevaEtiquetaAnchor.innerText = "Mi etiqueta anchor"
 
 document.body.appendChild( nuevaEtiquetaAnchor )
 
+ nuevaEtiquetaAnchor.href = '/una-ruta'
 
 nuevaEtiquetaAnchor.setAttribute( 'href', "/ruta-web" )
 
@@ -72,7 +73,6 @@ nuevaEtiquetaAnchor.setAttribute( 'href', "/ruta-web" )
 
 
 const imagen = document.createElement( 'img' )
-
 imagen.setAttribute( 'src', 'https://cdn.pixabay.com/photo/2017/01/15/19/04/red-panda-1982445_1280.jpg' )
 
 imagen.style = 'max-width:100%; display:block; width:150px; height:150px '
@@ -91,6 +91,10 @@ nuevoBoton.textContent = 'Hazme click!'
 
 document.body.appendChild( nuevoBoton )
 
+
+// nuevoBoton.onclick = () => { 
+//   imagen.src = "https://cdn.pixabay.com/photo/2013/07/12/15/30/penguin-149971_1280.png"
+// }
 
 nuevoBoton.addEventListener( 'click', function () {
   imagen.src = "https://cdn.pixabay.com/photo/2013/07/12/15/30/penguin-149971_1280.png"
@@ -236,7 +240,8 @@ inputNombres.setAttribute( 'id', 'campo1-id' )
 
 const labelNombres = document.createElement( 'label' )
 labelNombres.id = 'miLabel1'
-labelNombres.setAttribute( 'for', 'campo1' )
+labelNombres.htmlFor = 'campo1'
+// labelNombres.setAttribute( 'htmlFor', 'campo1' )
 labelNombres.innerText = 'Nombres'
 
 contenedor1.appendChild( labelNombres )
